@@ -47,3 +47,7 @@ public interface CodingBeer {
 
 }
 ```
+
+You can use the `MysqlConnection.INSTANCE.getConnection()` helper class for obtaining the connection from the pool. It is fairly easy to work with jOOQ, so feel free to experiment. Use the http://www.jooq.org/learn/ manuals for reference.
+
+Good luck and have fun :)
