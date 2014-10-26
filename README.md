@@ -6,6 +6,7 @@ Coding beer session for quick introduction in jOOQ.
 # Preconditions
 - good knowledge of SQL
 - MySQL database installed (Or you can use http://www.db4free.net/signup.php)
+- IDE with JDK 8 and Maven support
 
 ## Setup connection to the database in pom.xml:
 
