@@ -18,7 +18,8 @@ Coding beer session for quick introduction in jOOQ.
     </properties>
 ```
 
-## Load the world_innodb.sql script into your database
+## Prepare database
+Load the `world_innodb.sql` script into your database
 
 # Code generation
 (more info: http://www.jooq.org/doc/3.4/manual/code-generation/codegen-configuration/)
