@@ -19,10 +19,11 @@ Coding beer session for quick introduction in jOOQ.
 ```
 
 ## Prepare database
-Load the `world_innodb.sql` script into your database
+Load the `src/main/resources/world_innodb.sql` script into your database
 
 # Code generation
 (more info: http://www.jooq.org/doc/3.4/manual/code-generation/codegen-configuration/)
+
 You can use jOOQ to generate classes out of database structure that can be used for typesafe queries or easy CRUD operations.
 This can be set up easily using maven plugin. The code generation is run together with the `package` goal.
 
