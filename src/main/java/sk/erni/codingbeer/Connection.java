@@ -6,13 +6,12 @@ import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.util.Properties;
 
 /**
  * @author Pavol Rajzak, www.rapasoft.eu
  */
-public enum MysqlConnection {
+public enum Connection {
 
     INSTANCE;
 
@@ -24,12 +23,12 @@ public enum MysqlConnection {
     private final DataSource dataSource;
 
     @SneakyThrows
-    public Connection getConnection() {
+    public java.sql.Connection getConnection() {
         return dataSource.getConnection();
     }
 
     @SneakyThrows
-    private MysqlConnection() {
+    private Connection() {
         Properties properties = new Properties();
         properties.load(ClassLoader.getSystemResourceAsStream("database.properties"));
 

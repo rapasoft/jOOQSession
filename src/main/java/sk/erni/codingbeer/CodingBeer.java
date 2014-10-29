@@ -38,4 +38,8 @@ public interface CodingBeer {
      */
     public java.util.List<String> findOldestPeopleNames();
 
+    /**
+     * Basically truncate the Person table
+     */
+    void deleteAllPersons();
 }

@@ -5,22 +5,7 @@ Coding beer session for quick introduction in jOOQ.
 
 # Preconditions
 - good knowledge of SQL
-- MySQL database installed (Or you can use http://www.db4free.net/signup.php)
 - IDE with JDK 8 and Maven support
-
-## Setup connection to the database in pom.xml:
-
-```
-    <properties>
-        <database.driver>com.mysql.jdbc.Driver</database.driver>
-        <database.url>jdbc:mysql://localhost:3306/test?useUnicode=yes&amp;characterEncoding=utf8</database.url>
-        <database.username>root</database.username>
-        <database.password/>
-    </properties>
-```
-
-## Prepare database
-Load the `src/main/resources/world_innodb.sql` script into your database
 
 # Code generation
 (more info: http://www.jooq.org/doc/3.4/manual/code-generation/codegen-configuration/)
@@ -46,9 +31,11 @@ public interface CodingBeer {
 
     public java.util.List<String> findOldestPeopleNames();
 
+    void deleteAllPersons();
+    
 }
 ```
 
-You can use the `MysqlConnection.INSTANCE.getConnection()` helper class for obtaining the connection from the pool. It is fairly easy to work with jOOQ, so feel free to experiment. Use the http://www.jooq.org/learn/ manuals for reference.
+You can use the `Connection.INSTANCE.getConnection()` helper class for obtaining the connection from the pool. It is fairly easy to work with jOOQ, so feel free to experiment. Use the http://www.jooq.org/learn/ manuals for reference.
 
 Good luck and have fun :)

@@ -17,7 +17,7 @@ public class CodingBeerTest {
     @Before
     public void init() {
         //Make an instance of the coding beer implementation here
-        // codingBeer = new CodingBeerImpl();
+        codingBeer = new CodingBeerImpl();
         assertNotNull(codingBeer);
     }
 
@@ -58,5 +58,7 @@ public class CodingBeerTest {
         codingBeer.addPerson("Laco", 28, 126);
 
         assertEquals("Laco", codingBeer.findOldestPeopleNames().get(0));
+
+        codingBeer.deleteAllPersons();
     }
 }
