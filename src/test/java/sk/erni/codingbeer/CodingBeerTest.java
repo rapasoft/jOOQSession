@@ -17,7 +17,7 @@ public class CodingBeerTest {
     @Before
     public void init() {
         //Make an instance of the coding beer implementation here
-        codingBeer = new CodingBeerImpl();
+        // codingBeer = new CodingBeerImpl();
         assertNotNull(codingBeer);
     }
 
