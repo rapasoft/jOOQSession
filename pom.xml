@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,9 +11,11 @@
     <properties>
         <database.schema>PUBLIC</database.schema>
         <database.driver>org.hsqldb.jdbc.JDBCDriver</database.driver>
-        <database.url>jdbc:hsqldb:file:${project.build.scriptSourceDirectory}/codingbeer;shutdown=true;hsqldb.lock_file=false</database.url>
+        <database.url>jdbc:hsqldb:file:${project.build.scriptSourceDirectory}/codingbeer;shutdown=true;hsqldb.lock_file=false;encoding=UTF-8</database.url>
         <database.username>sa</database.username>
         <database.password/>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
@@ -53,6 +55,22 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>gsp</groupId>
+            <artifactId>gsp</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.build.testSourceDirectory}/lib/gsp.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jooq.external</groupId>
+            <artifactId>sql2jooq</artifactId>
+            <scope>system</scope>
+            <version>3.4.0</version>
+            <systemPath>${project.build.testSourceDirectory}/lib/sql2jooq-3.4.0.jar</systemPath>
         </dependency>
 
     </dependencies>
@@ -110,19 +128,16 @@
                     </jdbc>
 
                     <!-- Generator parameters -->
-                    <generator>
-                        <name>org.jooq.util.JavaGenerator</name>
-                        <database>
-                            <name>org.jooq.util.hsqldb.HSQLDBDatabase</name>
-                            <includes>.*</includes>
-                            <excludes/>
-                            <inputSchema>${database.schema}</inputSchema>
-                        </database>
-                        <target>
-                            <packageName>sk.erni.codingbeer</packageName>
-                            <directory>target/generated-sources/jooq</directory>
-                        </target>
-                    </generator>
+                    <!--
+                        TODO: Enable code generation so that classes are available in the target/generated-source/jooq folder under sk.erni.codingbeer package
+
+                        - Use proper DB schema (hint: maven property)
+                        - Use correct DB type name
+                        - Enable DAO generation
+
+                        Goal: CrudDaoTest should pass.
+                    -->
+
                 </configuration>
             </plugin>
         </plugins>

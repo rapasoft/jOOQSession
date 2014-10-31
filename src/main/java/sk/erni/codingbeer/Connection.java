@@ -23,11 +23,6 @@ public enum Connection {
     private final DataSource dataSource;
 
     @SneakyThrows
-    public java.sql.Connection getConnection() {
-        return dataSource.getConnection();
-    }
-
-    @SneakyThrows
     private Connection() {
         Properties properties = new Properties();
         properties.load(ClassLoader.getSystemResourceAsStream("database.properties"));
@@ -38,6 +33,15 @@ public enum Connection {
 
         Class.forName(properties.getProperty(DRIVER_CLASS)).newInstance();
         dataSource = setupDataSource(url, userName, password);
+    }
+
+    @SneakyThrows
+    public java.sql.Connection getConnection() {
+        return dataSource.getConnection();
+    }
+
+    public DataSource getDataSource() {
+        return dataSource;
     }
 
     private DataSource setupDataSource(String connectURI, String userName, String password) {
