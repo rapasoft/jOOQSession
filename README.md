@@ -5,7 +5,7 @@ Coding beer session for quick introduction in jOOQ.
 
 # Preconditions
 - good knowledge of SQL
-- IDE with JDK 8 and Maven support
+- IDE with JDK 8 and Maven support (be sure to install Lombok support for your IDE, e.g.: https://plugins.jetbrains.com/plugin/6317 or read more http://projectlombok.org/download.html)
 
 It is fairly easy to work with jOOQ, so feel free to experiment. Use the http://www.jooq.org/learn/ manuals for reference.
 
